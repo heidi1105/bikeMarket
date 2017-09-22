@@ -1,0 +1,97 @@
+
+
+<div class="listing"> 
+	<form (submit)="createListing()" #createForm="ngForm">
+	<h2> Create Listing </h2>
+	<div class="inside">
+		<div class="left">
+			<p> Image Upload </p>
+
+			<input type="text" 
+			name="imgsrc"
+			required
+			[(ngModel)]="newListing.imgsrc"
+			#imgsrc ="ngModel">
+		</div>
+		<div class="middle">
+			<p> Title </p>
+			<p><input type="text" 
+			name="title"
+			required
+			[(ngModel)]="newListing.title"
+			#title ="ngModel"></p>
+			<p> Description </p>
+			<textarea
+			name="desc"
+			required
+			[(ngModel)]="newListing.desc"
+			#desc ="ngModel"></textarea>
+		</div>
+		<div class = "right">
+			<p> Price </p>
+			<p><input type="number" 
+			name="price"
+			required
+			[(ngModel)]="newListing.price"
+			#price ="ngModel"></p>
+			<p> Location </p>
+			<p><input type="text" 
+			name="location"
+			required
+			[(ngModel)]="newListing.location"
+			#location ="ngModel"></p>
+			<P><button type="submit" [disabled]="!(createForm.valid)"> CREATE </button></P>
+		</div>
+	</div>
+	</form>
+</div>
+
+
+
+<div class="listing">
+	<h2> Edit/Delete Listings </h2>
+	<div class="inside" *ngFor=" let listing of listings">
+		<form (submit)="editListing(listing)" #editForm="ngForm">
+		<div class="left">
+			<p> Image Upload </p>
+
+			<input type="text" 
+			name="imgsrc2"
+			required
+			[(ngModel)]="listing.imgsrc"
+			#imgsrc2 ="ngModel">
+		</div>
+		<div class="middle">
+			<p> Title </p>
+			<p><input type="text" 
+			name="title2"
+			required
+			[(ngModel)]="listing.title"
+			#title2 ="ngModel"></p>
+			<p> Description </p>
+			<textarea
+			name="desc2"
+			required
+			[(ngModel)]="listing.desc"
+			#desc2 ="ngModel"></textarea>
+		</div>
+		<div class = "right">
+			<p> Price </p>
+			<p><input type="number" 
+			name="price2"
+			required
+			[(ngModel)]="listing.price"
+			#price2 ="ngModel"></p>
+			<p> Location </p>
+			<p><input type="text" 
+			name="location2"
+			required
+			[(ngModel)]="listing.location"
+			#location2 ="ngModel"></p>
+			<P><button type="submit" [disabled]="!(editForm.valid)"> EDIT </button></P>
+			<P><button (click)="deleteEvent(listing._id)"> DELETE </button></P>
+		</div>
+	</form>
+	</div>
+
+</div>	

@@ -1,0 +1,17 @@
+#login, #reg{
+	display: inline-block;
+	border:2px solid grey;
+	padding:5px;
+	vertical-align: top;
+}
+#reg{
+	width: 55%;
+}
+#login{
+	width:35%;
+}
+
+button{
+	width: 100px;
+	height:30px;
+}

@@ -1,0 +1,24 @@
+.left, .right, .middle{
+	display: inline-block;
+}
+
+.left{
+	width:200px;
+}
+
+.middle{
+	width:300px;
+}
+
+.listing{
+	display: block;
+	margin: 5px auto;
+	border: 2px solid black;
+	width: 800px;
+	padding:10px;
+}
+
+.inside{
+	border: 2px solid black;
+		padding:10px;
+}
